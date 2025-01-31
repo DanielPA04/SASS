@@ -7,11 +7,11 @@
 }
 
 .text-primary-light {
-  color: color.scale(vars.$primary-color, $lightness: 20%);
+  color: color.adjust(vars.$primary-color, $lightness: 20%);
 }
 
 .text-primary-dark {
-  color: color.scale(vars.$primary-color, $lightness: -20%);
+  color: color.adjust(vars.$primary-color, $lightness: -20%);
 }
 
 .bg-primary {
@@ -19,11 +19,11 @@
 }
 
 .bg-primary-light {
-  background-color: color.scale(vars.$primary-color, $lightness: 20%);
+  background-color: color.adjust(vars.$primary-color, $lightness: 20%);
 }
 
 .bg-primary-dark {
-  background-color: color.scale(vars.$primary-color, $lightness: -20%);
+  background-color: color.adjust(vars.$primary-color, $lightness: -20%);
 }
 
 
