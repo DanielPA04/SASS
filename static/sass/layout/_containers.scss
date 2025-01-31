@@ -1,5 +1,5 @@
 /* Containers */
-@use '../base/variables' as vars;
+@use "../base/variables" as vars;
 
 @mixin container-media($size) {
   @media (width >= $size) {
@@ -15,21 +15,15 @@
 }
 
 %container-base-extra {
-  @extend %container-base-extra;
+  @extend %container-base;
 }
 
 .container {
   @extend %container-base-extra;
-  @each $breakpoint, $size in vars.$breakpoints {
-    @include container-media($size);
-  }
-}
 
-.container {
-  @extend %container-base-extra;
-  @each $breakpoint, $size in vars.$breakpoints {
-    @media (width >= $size) {
-      max-width: $size;
+  @if vars.$generate-responsive-classes {
+    @each $breakpoint, $size in vars.$breakpoints {
+      @include container-media($size);
     }
   }
 }
@@ -38,10 +32,12 @@
   @extend %container-base-extra;
 }
 
-@each $breakpoint, $size in vars.$breakpoints {
-  .container-#{$breakpoint} {
-    @extend %container-base;
-    max-width: calc(100% - 15px);
-    @include container-media($size);
+@if vars.$generate-responsive-classes {
+  @each $breakpoint, $size in vars.$breakpoints {
+    .container-#{$breakpoint} {
+      @extend %container-base;
+      max-width: calc(100% - 15px);
+      @include container-media($size);
+    }
   }
 }

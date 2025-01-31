@@ -218,32 +218,11 @@ li {
 }
 
 /* Containers */
-.container-xl, .container-lg, .container-md, .container-sm {
+.container-xl, .container-lg, .container-md, .container-sm, .container-fluid, .container {
   width: 100%;
   padding-inline: 15px;
   margin-left: auto;
   margin-right: auto;
-}
-
-@media (width >= 576px) {
-  .container {
-    max-width: 576px;
-  }
-}
-@media (width >= 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-@media (width >= 992px) {
-  .container {
-    max-width: 992px;
-  }
-}
-@media (width >= 1200px) {
-  .container {
-    max-width: 1200px;
-  }
 }
 
 @media (width >= 576px) {
@@ -303,6 +282,7 @@ li {
   }
 }
 
+/* Grid */
 .row {
   --gutter-x: 8px;
   --gutter-y: 8px;
